@@ -6,7 +6,6 @@ describe('Contacts', function() {
 		element(by.model('vm.name')).sendKeys('Gary');
 		element(by.model('vm.phoneNumber')).sendKeys('0782837819');
 		element(by.css('button')).click();
-
 		var contactList = element.all(by.repeater('contact in vm.contacts'));
 		expect(contactList.count()).toEqual(4);
 		expect(contactList.get(3).element(by.css('h4')).getText()).toEqual('Name: Gary');
